@@ -449,11 +449,13 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x11UserExistsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\",\n" +
 	"\x12UserExistsResponse\x12\x16\n" +
-	"\x06exists\x18\x01 \x01(\bR\x06exists2\xae\x01\n" +
+	"\x06exists\x18\x01 \x01(\bR\x06exists2\xef\x01\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x129\n" +
-	"\bUserRole\x12\x15.auth.UserRoleRequest\x1a\x16.auth.UserRoleResponseB\x18Z\x16kaptoshka.sso.v1;ssov1b\x06proto3"
+	"\bUserRole\x12\x15.auth.UserRoleRequest\x1a\x16.auth.UserRoleResponse\x12?\n" +
+	"\n" +
+	"UserExists\x12\x17.auth.UserExistsRequest\x1a\x18.auth.UserExistsResponseB\x18Z\x16kaptoshka.sso.v1;ssov1b\x06proto3"
 
 var (
 	file_sso_sso_proto_rawDescOnce sync.Once
@@ -482,11 +484,13 @@ var file_sso_sso_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
 	2, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
 	4, // 2: auth.Auth.UserRole:input_type -> auth.UserRoleRequest
-	1, // 3: auth.Auth.Register:output_type -> auth.RegisterResponse
-	3, // 4: auth.Auth.Login:output_type -> auth.LoginResponse
-	5, // 5: auth.Auth.UserRole:output_type -> auth.UserRoleResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	6, // 3: auth.Auth.UserExists:input_type -> auth.UserExistsRequest
+	1, // 4: auth.Auth.Register:output_type -> auth.RegisterResponse
+	3, // 5: auth.Auth.Login:output_type -> auth.LoginResponse
+	5, // 6: auth.Auth.UserRole:output_type -> auth.UserRoleResponse
+	7, // 7: auth.Auth.UserExists:output_type -> auth.UserExistsResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name

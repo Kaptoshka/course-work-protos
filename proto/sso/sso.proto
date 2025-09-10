@@ -8,6 +8,7 @@ service Auth {
     rpc Register(RegisterRequest) returns (RegisterResponse);
     rpc Login(LoginRequest) returns (LoginResponse);
     rpc UserRole(UserRoleRequest) returns (UserRoleResponse);
+    rpc UserExists(UserExistsRequest) returns (UserExistsResponse);
 }
 
 message RegisterRequest {
