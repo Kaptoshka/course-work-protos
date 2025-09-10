@@ -44,6 +44,6 @@ message UserExistsRequest {
     int64 user_id = 1; // User ID to validate
 }
 
-message UserExistsREsponse {
+message UserExistsResponse {
     bool exists = 1; // Indicates whether the user exists
 }

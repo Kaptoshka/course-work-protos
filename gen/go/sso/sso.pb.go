@@ -377,27 +377,27 @@ func (x *UserExistsRequest) GetUserId() int64 {
 	return 0
 }
 
-type UserExistsREsponse struct {
+type UserExistsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Exists        bool                   `protobuf:"varint,1,opt,name=exists,proto3" json:"exists,omitempty"` // Indicates whether the user exists
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UserExistsREsponse) Reset() {
-	*x = UserExistsREsponse{}
+func (x *UserExistsResponse) Reset() {
+	*x = UserExistsResponse{}
 	mi := &file_sso_sso_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UserExistsREsponse) String() string {
+func (x *UserExistsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UserExistsREsponse) ProtoMessage() {}
+func (*UserExistsResponse) ProtoMessage() {}
 
-func (x *UserExistsREsponse) ProtoReflect() protoreflect.Message {
+func (x *UserExistsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_sso_sso_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -409,12 +409,12 @@ func (x *UserExistsREsponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UserExistsREsponse.ProtoReflect.Descriptor instead.
-func (*UserExistsREsponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UserExistsResponse.ProtoReflect.Descriptor instead.
+func (*UserExistsResponse) Descriptor() ([]byte, []int) {
 	return file_sso_sso_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *UserExistsREsponse) GetExists() bool {
+func (x *UserExistsResponse) GetExists() bool {
 	if x != nil {
 		return x.Exists
 	}
@@ -448,7 +448,7 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x04role\x18\x01 \x01(\tR\x04role\",\n" +
 	"\x11UserExistsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\",\n" +
-	"\x12UserExistsREsponse\x12\x16\n" +
+	"\x12UserExistsResponse\x12\x16\n" +
 	"\x06exists\x18\x01 \x01(\bR\x06exists2\xae\x01\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
@@ -476,7 +476,7 @@ var file_sso_sso_proto_goTypes = []any{
 	(*UserRoleRequest)(nil),    // 4: auth.UserRoleRequest
 	(*UserRoleResponse)(nil),   // 5: auth.UserRoleResponse
 	(*UserExistsRequest)(nil),  // 6: auth.UserExistsRequest
-	(*UserExistsREsponse)(nil), // 7: auth.UserExistsREsponse
+	(*UserExistsResponse)(nil), // 7: auth.UserExistsResponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
