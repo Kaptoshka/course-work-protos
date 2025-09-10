@@ -39,3 +39,11 @@ message UserRoleRequest {
 message UserRoleResponse {
     string role = 1; // Indicates whether the user is admin
 }
+
+message UserExistsRequest {
+    int64 user_id = 1; // User ID to validate
+}
+
+message UserExistsREsponse {
+    bool exists = 1; // Indicates whether the user exists
+}

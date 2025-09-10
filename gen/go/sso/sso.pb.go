@@ -333,6 +333,94 @@ func (x *UserRoleResponse) GetRole() string {
 	return ""
 }
 
+type UserExistsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // User ID to validate
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserExistsRequest) Reset() {
+	*x = UserExistsRequest{}
+	mi := &file_sso_sso_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserExistsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserExistsRequest) ProtoMessage() {}
+
+func (x *UserExistsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserExistsRequest.ProtoReflect.Descriptor instead.
+func (*UserExistsRequest) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *UserExistsRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type UserExistsREsponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Exists        bool                   `protobuf:"varint,1,opt,name=exists,proto3" json:"exists,omitempty"` // Indicates whether the user exists
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserExistsREsponse) Reset() {
+	*x = UserExistsREsponse{}
+	mi := &file_sso_sso_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserExistsREsponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserExistsREsponse) ProtoMessage() {}
+
+func (x *UserExistsREsponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sso_sso_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserExistsREsponse.ProtoReflect.Descriptor instead.
+func (*UserExistsREsponse) Descriptor() ([]byte, []int) {
+	return file_sso_sso_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *UserExistsREsponse) GetExists() bool {
+	if x != nil {
+		return x.Exists
+	}
+	return false
+}
+
 var File_sso_sso_proto protoreflect.FileDescriptor
 
 const file_sso_sso_proto_rawDesc = "" +
@@ -357,7 +445,11 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x0fUserRoleRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"&\n" +
 	"\x10UserRoleResponse\x12\x12\n" +
-	"\x04role\x18\x01 \x01(\tR\x04role2\xae\x01\n" +
+	"\x04role\x18\x01 \x01(\tR\x04role\",\n" +
+	"\x11UserExistsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\",\n" +
+	"\x12UserExistsREsponse\x12\x16\n" +
+	"\x06exists\x18\x01 \x01(\bR\x06exists2\xae\x01\n" +
 	"\x04Auth\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x129\n" +
@@ -375,14 +467,16 @@ func file_sso_sso_proto_rawDescGZIP() []byte {
 	return file_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_sso_sso_proto_goTypes = []any{
-	(*RegisterRequest)(nil),  // 0: auth.RegisterRequest
-	(*RegisterResponse)(nil), // 1: auth.RegisterResponse
-	(*LoginRequest)(nil),     // 2: auth.LoginRequest
-	(*LoginResponse)(nil),    // 3: auth.LoginResponse
-	(*UserRoleRequest)(nil),  // 4: auth.UserRoleRequest
-	(*UserRoleResponse)(nil), // 5: auth.UserRoleResponse
+	(*RegisterRequest)(nil),    // 0: auth.RegisterRequest
+	(*RegisterResponse)(nil),   // 1: auth.RegisterResponse
+	(*LoginRequest)(nil),       // 2: auth.LoginRequest
+	(*LoginResponse)(nil),      // 3: auth.LoginResponse
+	(*UserRoleRequest)(nil),    // 4: auth.UserRoleRequest
+	(*UserRoleResponse)(nil),   // 5: auth.UserRoleResponse
+	(*UserExistsRequest)(nil),  // 6: auth.UserExistsRequest
+	(*UserExistsREsponse)(nil), // 7: auth.UserExistsREsponse
 }
 var file_sso_sso_proto_depIdxs = []int32{
 	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
@@ -409,7 +503,7 @@ func file_sso_sso_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
