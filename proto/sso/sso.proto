@@ -9,6 +9,7 @@ service Auth {
     rpc Login(LoginRequest) returns (LoginResponse);
     rpc UserRole(UserRoleRequest) returns (UserRoleResponse);
     rpc UserExists(UserExistsRequest) returns (UserExistsResponse);
+    rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
 }
 
 message RegisterRequest {
@@ -47,4 +48,21 @@ message UserExistsRequest {
 
 message UserExistsResponse {
     bool exists = 1; // Indicates whether the user exists
+}
+
+message ListUsersRequest {
+    string role = 1;
+    string query = 2;
+}
+
+message User {
+    int64 id = 1;
+    string email = 2;
+    string first_name = 3;
+    string last_name = 4;
+    string middle_name = 5;
+}
+
+message ListUsersResponse {
+    repeated User users = 1;
 }
